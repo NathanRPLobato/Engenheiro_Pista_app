@@ -1,0 +1,52 @@
+{
+  "table": "lap_degradation_windows",
+  "id_cols": [
+    "race_id",
+    "trackId",
+    "lap_number",
+    "compound_id",
+    "win_start_m",
+    "win_end_m",
+    "window_m",
+    "stride_m",
+    "n_samples"
+  ],
+  "x_cols": [
+    "throttle__mean",
+    "throttle__var",
+    "throttle__max",
+    "throttle__min",
+    "brake__mean",
+    "brake__var",
+    "brake__max",
+    "brake__min",
+    "steering__mean",
+    "steering__var",
+    "steering__max",
+    "steering__min",
+    "fuel__mean",
+    "gforce_X__mean",
+    "gforce_Y__mean",
+    "angular_vel_Z__mean",
+    "slip_abs__mean",
+    "slip_abs__max",
+    "tyre_temp_mean",
+    "tyre_press_mean",
+    "speed2__mean",
+    "dt_window",
+    "lap_dist_max",
+    "baseline_mean_tc",
+    "baseline_mean_track",
+    "baseline_mean",
+    "baseline_window_time"
+  ],
+  "y_cols": [
+    "y_pace_window",
+    "y_stress_window"
+  ],
+  "notes": {
+    "pace_target": "y_pace_window = dt_window - baseline_window_time (positivo = pior que baseline)",
+    "stress_target": "y_stress_window = 2*slip + brake + 0.5*abs(steer_mean)",
+    "speed": "speed2__mean = mean(vx^2+vy^2+vz^2), sqrt se quiser depois"
+  }
+}
